@@ -3,7 +3,8 @@ import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import usersRouter from './routes/api/users.js';
-import blogsRouter from './routes/api/blog.js'
+import blogsRouter from './routes/api/blog.js';
+import blogsuiRouter from './routes/ui/home.js';
 //Moduliai
 
 //Konstantos
@@ -13,23 +14,24 @@ const app = express();
 
 //View engine EJS nustatymai
 app.set('views', path.join('views'));
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 //View engine EJS nustatymai
 
 //Papildomi nustatymai
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false
-}))
-app.use(cookieParser())
+}));
+app.use(cookieParser());
 //Papildomi nustatymai
 
 //Papildomų aplankų nurodymas
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 //Router nurodymas
-app.use('/api/users', usersRouter)
-app.use('/api/blog', blogsRouter)
+app.use('/api/users', usersRouter);
+app.use('/api/blog', blogsRouter);
+app.use('/home', blogsuiRouter)
 //Router nurodymas
 
 //Serverio paleidimas
