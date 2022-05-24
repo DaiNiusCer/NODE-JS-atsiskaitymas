@@ -31,14 +31,14 @@ router.post('/', async (req, res) => {
 
 
     if (match) {
-      const token = jwt.sign({ id: data[0].id, email: data[0].email }, process.env.ACCESS_SECRET_TOKEN)
+      const token = jwt.sign({ id: data[0].id, email: data[0].email, name: data[0].name }, process.env.ACCESS_SECRET_TOKEN)
 
       return res
         .cookie("access_token", token, {
           httpOnly: true,
           secure: process.env.NODE_ENV === "production",
         })
-        .redirect('/')
+        .redirect('/user')
 
 
     } else {

@@ -9,6 +9,7 @@ import registerRouter from './routes/ui/regsiter.js';
 import loginRouter from './routes/ui/login.js';
 import logoutRouter from './routes/ui/logout.js';
 import addBlogRouter from './routes/ui/addblog.js';
+import userRouter from './routes/ui/user.js'
 //Moduliai
 
 //Konstantos
@@ -38,7 +39,8 @@ app.use('/api/blog', blogsRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/addblog', addBlogRouter);
-app.use('/logout', logoutRouter)
+app.use('/logout', logoutRouter);
+app.use('/user', userRouter)
 app.use('/:home?', blogsuiRouter);
 
 //Router nurodymas

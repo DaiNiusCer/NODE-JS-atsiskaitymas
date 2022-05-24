@@ -16,26 +16,24 @@ router.get('/', auth, async (req, res) => {
 
 router.post("/", auth, async (req, res) => {
   try {
-    let author = req.body.author_id;
+
     let title = req.body.title;
     let content = req.body.content;
 
-    if (author === "") {
-      res.send('Please provide Your id')
-    }
-    else if (title === "") {
+
+    if (title === "") {
       res.send('Please provide blog title')
     }
     else if (content === "") {
       res.send('Please write something')
     } else {
       const data = await connect.query(`INSERT INTO blogs.blog SET ?`, {
-        author_id: author,
+        author_id: req.token.id,
         title: title,
         content: content
       })
 
-      res.redirect('/')
+      res.redirect('/user')
 
     }
 

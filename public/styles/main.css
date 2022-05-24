@@ -1,5 +1,6 @@
 @import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
-@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Lobster&display=swap');
+
 
 body {
   background-color: blanchedalmond;
@@ -104,4 +105,24 @@ body {
 
 span {
   font-size: 25px;
+}
+
+.trinti {
+  height: 30px;
+  width: 60px;
+  background-color: rgb(243, 213, 43);
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.trinti:hover {
+  background-color: red;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  text-align: right;
+  font-weight: bold;
+  color: rgb(201, 172, 228);
+  margin-right: 100px;
 }
