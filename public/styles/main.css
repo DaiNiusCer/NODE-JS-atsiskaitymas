@@ -27,6 +27,8 @@ body {
   background-color: green;
   height: 40px;
   width: 80px;
+  margin-right: 25px;
+  margin-left: 25px;
 }
 
 .ieskoti:hover {
@@ -60,4 +62,14 @@ body {
 .content_title {
   font-size: 25px;
   color: blanchedalmond;
+}
+
+.registracija {
+  border: 3px solid black;
+  margin: 50px auto;
+  width: 350px;
+}
+
+.forma {
+  text-align: center
 }
