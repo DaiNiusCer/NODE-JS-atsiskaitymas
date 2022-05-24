@@ -5,7 +5,9 @@ import path from 'path';
 import usersRouter from './routes/api/users.js';
 import blogsRouter from './routes/api/blog.js';
 import blogsuiRouter from './routes/ui/home.js';
-import registerRouter from './routes/ui/regsiter.js'
+import registerRouter from './routes/ui/regsiter.js';
+import loginRouter from './routes/ui/login.js';
+import addBlogRouter from './routes/ui/addblog.js'
 //Moduliai
 
 //Konstantos
@@ -32,8 +34,11 @@ app.use(express.static('public'));
 //Router nurodymas
 app.use('/api/users', usersRouter);
 app.use('/api/blog', blogsRouter);
-app.use('/home', blogsuiRouter);
 app.use('/register', registerRouter);
+app.use('/login', loginRouter);
+app.use('/addblog', addBlogRouter);
+app.use('/:home?', blogsuiRouter);
+
 //Router nurodymas
 
 //Serverio paleidimas

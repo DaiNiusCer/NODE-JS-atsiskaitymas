@@ -73,3 +73,9 @@ body {
 .forma {
   text-align: center
 }
+
+.prisijungimas {
+  border: 3px solid black;
+  margin: 50px auto;
+  width: 350px;
+}
