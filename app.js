@@ -7,7 +7,8 @@ import blogsRouter from './routes/api/blog.js';
 import blogsuiRouter from './routes/ui/home.js';
 import registerRouter from './routes/ui/regsiter.js';
 import loginRouter from './routes/ui/login.js';
-import addBlogRouter from './routes/ui/addblog.js'
+import logoutRouter from './routes/ui/logout.js';
+import addBlogRouter from './routes/ui/addblog.js';
 //Moduliai
 
 //Konstantos
@@ -37,6 +38,7 @@ app.use('/api/blog', blogsRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/addblog', addBlogRouter);
+app.use('/logout', logoutRouter)
 app.use('/:home?', blogsuiRouter);
 
 //Router nurodymas

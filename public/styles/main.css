@@ -79,3 +79,29 @@ body {
   margin: 50px auto;
   width: 350px;
 }
+
+.pridetiBloga {
+  text-align: center;
+}
+
+.blogoForma {
+  margin: 50px auto;
+  border: 3px solid black;
+  width: 600px;
+}
+
+.textarea {
+  resize: none;
+  background-color: grey;
+}
+
+.loginOrRegister {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  font-size: 25px;
+}

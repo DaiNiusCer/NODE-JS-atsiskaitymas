@@ -7,7 +7,7 @@
 <body>
   <div class="bigFrame">
     <div class="loginOrRegister">
-     
+      <%- include('partials/buttons')%>
        
       </div>
     <div class="rikiavimas">
@@ -35,8 +35,27 @@
     <div class="content_id">Blog ID: <%=item.id%></div>
     <div class="content_title"><%=item.title%></div>
     <div class="content_contents"><p><%=item.content%></p></div>
+    <% if(auth){ %>
+      <button class="trinti"  onclick="istrinti('<%=item.id%>')">X</button>
+      <% }%>
   </div>
   <%})%>
   </div>
 </body>
 </html>
+<script>
+
+  const logout = () => {
+  document.cookie = 'token=; Max-Age=0'
+  window.location.replace('/')
+  }
+  
+  const istrinti=(id)=>{
+    
+    fetch(`addblog/blogs/${id}`, { method: 'DELETE' })
+    .then(window.location.replace('/'))
+
+   
+  }
+  
+  </script>

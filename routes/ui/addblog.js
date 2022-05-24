@@ -1,9 +1,10 @@
 import express from 'express';
 import connect from '../../mySQLcon.js';
+import auth from '../../auth.js'
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
     res.render('addblog', { title: "Add a new blog !" })
 
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   try {
     let author = req.body.author_id;
     let title = req.body.title;
@@ -42,6 +43,18 @@ router.post("/", async (req, res) => {
   } catch (err) {
     console.log(`Klaida addbar puslapyje: ${err}`)
     res.send({ err: `Gavai klaidą addbar dalyje: ${err}` })
+  }
+})
+
+router.delete("/blogs/:id", async (req, res) => {
+  try {
+    const data = await connect.query(`DELETE FROM blogs.blog WHERE id =?`, [req.params.id])
+    res.send(data)
+
+
+  } catch (err) {
+    console.log(`Klaida addblog puslapyje: ${err}`)
+    res.send({ err: `Gavai klaidą addblog dalyje: ${err}` })
   }
 })
 
