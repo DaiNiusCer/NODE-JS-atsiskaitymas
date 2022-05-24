@@ -1,8 +1,9 @@
 import cookieParser from 'cookie-parser';
 import 'dotenv/config';
-import express from 'express'
-import path from 'path'
-import usersRouter from './routes/api/users.js'
+import express from 'express';
+import path from 'path';
+import usersRouter from './routes/api/users.js';
+import blogsRouter from './routes/api/blog.js'
 //Moduliai
 
 //Konstantos
@@ -28,6 +29,7 @@ app.use(express.static('public'))
 
 //Router nurodymas
 app.use('/api/users', usersRouter)
+app.use('/api/blog', blogsRouter)
 //Router nurodymas
 
 //Serverio paleidimas
