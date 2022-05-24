@@ -1,5 +1,5 @@
 @import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
-@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Koulen&family=Lobster&family=Smooch&display=swap');
 
 
 body {
@@ -125,4 +125,11 @@ h1 {
   font-weight: bold;
   color: rgb(201, 172, 228);
   margin-right: 100px;
+}
+
+h3 {
+  font-size: 60px;
+  font-family: 'Smooch', cursive;
+  font-weight: bold;
+  color: rgb(177, 84, 7);
 }
